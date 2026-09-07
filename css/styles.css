@@ -1,0 +1,3261 @@
+/* =========================================================
+   INSIGHTBRIDGE ANALYTICS — WEBSITE STYLES
+   ========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+
+:root {
+    /* Core brand colours */
+    --color-navy: #0B2A50;
+    --color-teal: #14919C;
+    --color-blue-grey: #596A7A;
+    --color-bridge-light: #ADCCD3;
+
+    /* Primary text colours */
+    --color-text: #263442;
+    --color-text-secondary: #596A7A;
+    --color-heading: #0B2A50;
+
+    /* Background colours */
+    --color-white: #FFFFFF;
+    --color-background: #FFFFFF;
+    --color-background-near-white: #F8FAFB;
+
+    /* Pale section backgrounds */
+    --color-background-vision: #F4F8FA;
+    --color-background-training: #F5FAFA;
+
+    /* Borders and structural lines */
+    --color-border: #D9E2E8;
+    --color-border-light: #E7EDF1;
+
+    /* Link and accent colours */
+    --color-link: #0B2A50;
+    --color-accent: #14919C;
+
+    /* Focus treatment */
+    --color-focus: #0B2A50;
+
+    /* =========================================================
+       Typography
+       ========================================================= */
+
+    /* Font family */
+    --font-primary: "Inter", Arial, Helvetica, sans-serif;
+
+    /* Font weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Font sizes */
+    --font-size-hero: 3rem;              /* 48 px */
+    --font-size-section-heading: 2.5rem; /* 40 px */
+    --font-size-subsection-major: 2rem;  /* 32 px */
+    --font-size-subsection: 1.5rem;      /* 24 px */
+    --font-size-card-heading: 1.25rem;   /* 20 px */
+    --font-size-body: 1.0625rem;         /* 17 px */
+    --font-size-navigation: 1rem;        /* 16 px */
+    --font-size-small: 0.9375rem;        /* 15 px */
+    --font-size-footer: 0.875rem;        /* 14 px */
+
+    /* Line heights */
+    --line-height-body: 1.65;
+    --line-height-heading: 1.2;
+    --line-height-card: 1.55;
+
+    /* Letter spacing */
+    --letter-spacing-normal: 0;
+    --letter-spacing-label: 0.04em;
+
+    /* =========================================================
+       Width & Layout
+       ========================================================= */
+
+    /* Main content widths */
+    --width-container-max: 75rem;        /* 1200 px */
+    --width-reading: 48rem;              /* 768 px */
+    --width-hero: 54rem;                 /* 864 px */
+
+    /* Horizontal page padding */
+    --page-padding-desktop: 2.5rem;      /* 40 px */
+    --page-padding-tablet: 2rem;         /* 32 px */
+    --page-padding-mobile: 1.25rem;      /* 20 px */
+
+    /* =========================================================
+       Spacing
+       ========================================================= */
+
+    /* Core spacing scale */
+    --space-1: 0.5rem;      /* 8 px */
+    --space-2: 1rem;        /* 16 px */
+    --space-3: 1.5rem;      /* 24 px */
+    --space-4: 2rem;        /* 32 px */
+    --space-5: 3rem;        /* 48 px */
+    --space-6: 4rem;        /* 64 px */
+    --space-7: 5rem;        /* 80 px */
+    --space-8: 6rem;        /* 96 px */
+
+    /* Section spacing */
+    --section-padding-desktop: 5rem;     /* 80 px */
+    --section-padding-mobile: 4rem;      /* 64 px */
+
+    /* Common content spacing */
+    --spacing-heading-to-intro: 2rem;    /* 32 px */
+    --spacing-intro-to-content: 3rem;    /* 48 px */
+    --spacing-subsection-gap: 4rem;      /* 64 px */
+    --spacing-paragraph: 1rem;           /* 16 px */
+
+    /* Card and grid spacing */
+    --spacing-card-gap: 1.5rem;          /* 24 px */
+    --spacing-card-padding: 1.5rem;      /* 24 px */
+    --spacing-card-padding-mobile: 1.25rem; /* 20 px */
+
+    /* =========================================================
+       Borders, Radius & Structural Values
+       ========================================================= */
+
+    /* Border widths */
+    --border-width-standard: 1px;
+    --border-width-accent: 2px;
+
+    /* Border radius */
+    --radius-card: 0.5rem;             /* 8 px */
+    --radius-small: 0.375rem;          /* 6 px */
+
+    /* Header dimensions */
+    --header-height-desktop: 4.75rem;  /* 76 px */
+    --header-height-mobile: 4.25rem;   /* 68 px */
+
+    /* Navigation accent */
+    --nav-underline-height: 2px;
+}
+
+/* =========================================================
+   2. CSS RESET & GLOBAL BASE RULES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Box sizing
+   --------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   Document defaults
+   --------------------------------------------------------- */
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: var(--font-primary);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+
+/* ---------------------------------------------------------
+   Basic typography reset
+   --------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading);
+    line-height: var(--line-height-heading);
+}
+
+p {
+    margin-bottom: var(--spacing-paragraph);
+}
+
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+a {
+    color: var(--color-link);
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    text-decoration-thickness: var(--border-width-accent);
+}
+
+
+/* ---------------------------------------------------------
+   Images and media
+   --------------------------------------------------------- */
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+
+/* ---------------------------------------------------------
+   Form and interactive elements
+   --------------------------------------------------------- */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   Lists
+   --------------------------------------------------------- */
+
+ul,
+ol {
+    margin-top: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Selection
+   --------------------------------------------------------- */
+
+::selection {
+    background-color: var(--color-bridge-light);
+    color: var(--color-navy);
+}
+
+/* =========================================================
+   3. GLOBAL TYPOGRAPHY RULES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Headings
+   --------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    color: var(--color-heading);
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+h1 {
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-bold);
+}
+
+h2 {
+    font-size: var(--font-size-section-heading);
+    font-weight: var(--font-weight-bold);
+}
+
+h3 {
+    font-size: var(--font-size-subsection-major);
+    font-weight: var(--font-weight-semibold);
+}
+
+h4 {
+    font-size: var(--font-size-subsection);
+    font-weight: var(--font-weight-semibold);
+}
+
+h5,
+h6 {
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+}
+
+
+/* ---------------------------------------------------------
+   Body text
+   --------------------------------------------------------- */
+
+p,
+li {
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+}
+
+
+/* ---------------------------------------------------------
+   Emphasis
+   --------------------------------------------------------- */
+
+strong,
+b {
+    font-weight: var(--font-weight-semibold);
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+
+/* ---------------------------------------------------------
+   Reusable typography classes
+   --------------------------------------------------------- */
+
+.hero-title {
+    max-width: var(--width-hero);
+
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-heading);
+}
+
+.section-title {
+    font-size: var(--font-size-section-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    color: var(--color-heading);
+}
+
+.subsection-title-major {
+    font-size: var(--font-size-subsection-major);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-heading);
+}
+
+.subsection-title {
+    font-size: var(--font-size-subsection);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-heading);
+}
+
+.card-title {
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-heading);
+}
+
+.text-small {
+    font-size: var(--font-size-small);
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+/* =========================================================
+   4. GLOBAL LAYOUT & CONTAINER RULES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Main content container
+   --------------------------------------------------------- */
+
+.container {
+    width: 100%;
+    max-width: var(--width-container-max);
+
+    margin-inline: auto;
+
+    padding-inline: var(--page-padding-desktop);
+}
+
+
+/* ---------------------------------------------------------
+   Readable text width
+   --------------------------------------------------------- */
+
+.reading-width {
+    width: 100%;
+    max-width: var(--width-reading);
+}
+
+
+/* ---------------------------------------------------------
+   Hero content width
+   --------------------------------------------------------- */
+
+.hero-width {
+    width: 100%;
+    max-width: var(--width-hero);
+}
+
+
+/* ---------------------------------------------------------
+   Major sections
+   --------------------------------------------------------- */
+
+main > section {
+    padding-block: var(--section-padding-desktop);
+}
+
+
+/* ---------------------------------------------------------
+   Section content spacing
+   --------------------------------------------------------- */
+
+.section-intro {
+    margin-bottom: var(--spacing-intro-to-content);
+}
+
+.section-title {
+    margin-bottom: var(--spacing-heading-to-intro);
+}
+
+.subsection {
+    margin-top: var(--spacing-subsection-gap);
+}
+
+
+/* ---------------------------------------------------------
+   General content flow
+   --------------------------------------------------------- */
+
+.content-stack > * + * {
+    margin-top: var(--space-2);
+}
+
+/* =========================================================
+   5. ACCESSIBILITY & MOTION FOUNDATIONS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Keyboard focus
+   --------------------------------------------------------- */
+
+:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   Same-page navigation and scroll offset
+   --------------------------------------------------------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+main > section {
+    scroll-margin-top: calc(
+        var(--header-height-desktop) + var(--space-2)
+    );
+}
+
+
+/* ---------------------------------------------------------
+   Reduced motion preference
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================================
+   6. RESPONSIVE FOUNDATION RULES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tablet and narrower screens
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+    .container {
+        padding-inline: var(--page-padding-tablet);
+    }
+
+    .hero-title,
+    h1 {
+        font-size: 2.625rem; /* 42 px */
+    }
+
+    .section-title,
+    h2 {
+        font-size: 2.25rem; /* 36 px */
+    }
+
+    .subsection-title-major,
+    h3 {
+        font-size: 1.875rem; /* 30 px */
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile screens
+   --------------------------------------------------------- */
+
+@media (max-width: 40rem) {
+
+    .container {
+        padding-inline: var(--page-padding-mobile);
+    }
+
+    main > section {
+        padding-block: var(--section-padding-mobile);
+    }
+
+    .hero-title,
+    h1 {
+        font-size: 2.25rem; /* 36 px */
+    }
+
+    .section-title,
+    h2 {
+        font-size: 2rem; /* 32 px */
+    }
+
+    .subsection-title-major,
+    h3 {
+        font-size: 1.75rem; /* 28 px */
+    }
+
+    .subsection-title,
+    h4 {
+        font-size: 1.375rem; /* 22 px */
+    }
+
+    .card-title,
+    h5,
+    h6 {
+        font-size: 1.1875rem; /* 19 px */
+    }
+
+    main > section {
+        scroll-margin-top: calc(
+            var(--header-height-mobile) + var(--space-2)
+        );
+    }
+}
+
+/* =========================================================
+   7. HEADER & NAVIGATION — DESKTOP LAYOUT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Header shell
+   --------------------------------------------------------- */
+
+#site-header {
+    min-height: var(--header-height-desktop);
+
+    background-color: var(--color-background);
+
+    border-bottom:
+        var(--border-width-standard)
+        solid
+        var(--color-border-light);
+}
+
+
+/* ---------------------------------------------------------
+   Header container
+   --------------------------------------------------------- */
+
+#site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: var(--header-height-desktop);
+
+    gap: var(--space-4);
+}
+
+
+/* ---------------------------------------------------------
+   Brand layout
+   --------------------------------------------------------- */
+
+.site-brand {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+}
+
+
+
+/* ---------------------------------------------------------
+   Desktop navigation layout
+   --------------------------------------------------------- */
+
+.site-navigation {
+    margin-left: auto;
+}
+
+.site-navigation ul {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-4);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.site-navigation li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile menu control
+   Hidden on desktop
+   --------------------------------------------------------- */
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* =========================================================
+   8. HEADER BRAND TREATMENT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Compact brand name
+   --------------------------------------------------------- */
+
+.brand-name {
+    display: flex;
+    align-items: baseline;
+
+    gap: 0.35rem;
+
+    white-space: nowrap;
+
+    font-size: 1.25rem;       /* 20 px */
+    line-height: 1.2;
+}
+
+
+/* InsightBridge */
+
+.brand-insightbridge {
+    font-weight: var(--font-weight-semibold);
+
+    color: var(--color-navy);
+}
+
+
+/* Analytics */
+
+.brand-analytics {
+    font-weight: var(--font-weight-medium);
+
+    color: var(--color-teal);
+}
+
+
+
+/* ---------------------------------------------------------
+   Brand symbol
+   --------------------------------------------------------- */
+
+.brand-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.5rem;      /* 40 px */
+    height: 2.5rem;     /* 40 px */
+
+    flex-shrink: 0;
+}
+
+.brand-symbol img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+/* =========================================================
+   9. DESKTOP NAVIGATION STYLING
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Navigation typography and spacing
+   --------------------------------------------------------- */
+
+.site-navigation a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding-block: 0.5rem;
+
+    font-size: var(--font-size-navigation);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.2;
+
+    color: var(--color-text);
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+/* ---------------------------------------------------------
+   Default navigation emphasis
+   --------------------------------------------------------- */
+
+.site-navigation a:visited {
+    color: var(--color-text);
+}
+
+
+/* ---------------------------------------------------------
+   Focus treatment adjustment
+   --------------------------------------------------------- */
+
+.site-navigation a:focus-visible {
+    border-radius: var(--radius-small);
+}
+
+/* =========================================================
+   10. STICKY HEADER & NAVIGATION STATES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Sticky header
+   --------------------------------------------------------- */
+
+#site-header {
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+/* ---------------------------------------------------------
+   Navigation underline foundation
+   --------------------------------------------------------- */
+
+.site-navigation a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: var(--nav-underline-height);
+
+    background-color: var(--color-accent);
+
+    transform: translateX(-50%);
+
+    transition:
+        width 180ms ease,
+        background-color 180ms ease;
+}
+
+
+/* ---------------------------------------------------------
+   Hover state
+   --------------------------------------------------------- */
+
+.site-navigation a:hover {
+    color: var(--color-navy);
+}
+
+.site-navigation a:hover::after {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   Active navigation state
+   --------------------------------------------------------- */
+
+.site-navigation a.active,
+.site-navigation a[aria-current="page"] {
+    color: var(--color-navy);
+}
+
+.site-navigation a.active::after,
+.site-navigation a[aria-current="page"]::after {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   Keyboard focus state
+   --------------------------------------------------------- */
+
+.site-navigation a:focus-visible {
+    color: var(--color-navy);
+}
+
+.site-navigation a:focus-visible::after {
+    width: 100%;
+}
+
+/* =========================================================
+   11. MOBILE MENU STYLING
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tablet / mobile navigation
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+    /* -----------------------------------------------------
+       Header container
+       ----------------------------------------------------- */
+
+    #site-header .container {
+        min-height: var(--header-height-mobile);
+    }
+
+
+    /* -----------------------------------------------------
+       Mobile menu toggle
+       ----------------------------------------------------- */
+
+    .mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 2.75rem;       /* 44 px */
+        height: 2.75rem;      /* 44 px */
+
+        padding: 0;
+
+        flex-shrink: 0;
+
+        color: var(--color-navy);
+        background-color: transparent;
+
+        border:
+            var(--border-width-standard)
+            solid
+            var(--color-border);
+
+        border-radius: var(--radius-small);
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+
+    /* -----------------------------------------------------
+       Mobile navigation panel
+       ----------------------------------------------------- */
+
+    .site-navigation {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        margin-left: 0;
+
+        background-color: var(--color-background);
+
+        border-top:
+            var(--border-width-standard)
+            solid
+            var(--color-border-light);
+
+        border-bottom:
+            var(--border-width-standard)
+            solid
+            var(--color-border);
+
+        z-index: 999;
+    }
+
+
+    /* Open state — activated later by JavaScript */
+
+    .site-navigation.is-open {
+        display: block;
+    }
+
+
+    /* -----------------------------------------------------
+       Mobile navigation list
+       ----------------------------------------------------- */
+
+    .site-navigation ul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        width: 100%;
+        max-width: var(--width-container-max);
+
+        margin-inline: auto;
+        padding:
+            var(--space-2)
+            var(--page-padding-tablet);
+    }
+
+    .site-navigation li {
+        width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       Mobile navigation links
+       ----------------------------------------------------- */
+
+    .site-navigation a {
+        display: block;
+
+        width: 100%;
+
+        padding-block: 0.875rem;
+
+        font-size: var(--font-size-navigation);
+        font-weight: var(--font-weight-medium);
+
+        color: var(--color-text);
+
+        text-decoration: none;
+    }
+
+
+    /* Desktop underline is not used in the mobile menu */
+
+    .site-navigation a::after {
+        display: none;
+    }
+
+
+    /* Restrained mobile hover / focus */
+
+    .site-navigation a:hover,
+    .site-navigation a:focus-visible,
+    .site-navigation a.active {
+        color: var(--color-navy);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Smaller mobile screens
+   --------------------------------------------------------- */
+
+@media (max-width: 40rem) {
+
+    .site-navigation ul {
+        padding-inline: var(--page-padding-mobile);
+    }
+
+    .brand-name {
+        font-size: 1.125rem;   /* 18 px */
+    }
+
+    .brand-symbol {
+        width: 2.25rem;        /* 36 px */
+        height: 2.25rem;       /* 36 px */
+    }
+}
+
+/* =========================================================
+   12. HOME HERO — LAYOUT & TYPOGRAPHY
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Home section
+   --------------------------------------------------------- */
+
+.home-section {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+}
+
+
+/* ---------------------------------------------------------
+   Hero content area
+   --------------------------------------------------------- */
+
+.home-hero {
+    max-width: none;
+}
+
+
+/* ---------------------------------------------------------
+   Hero headline
+   --------------------------------------------------------- */
+
+.home-section .hero-title {
+    max-width: 52rem;
+
+    margin-bottom: var(--space-5);
+
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.12;
+
+    color: var(--color-navy);
+}
+
+
+/* =========================================================
+   13. HOME — THREE-PILLAR PRESENTATION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Three-pillar grid
+   --------------------------------------------------------- */
+
+.home-pillars {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: var(--spacing-card-gap);
+
+    margin-top: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Individual pillar
+   --------------------------------------------------------- */
+
+.home-pillar {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 7.5rem;
+
+    padding: var(--spacing-card-padding);
+
+    background-color: var(--color-background);
+
+    border:
+        var(--border-width-standard)
+        solid
+        var(--color-border-light);
+
+    border-top:
+        var(--border-width-accent)
+        solid
+        var(--color-teal);
+
+    border-radius: var(--radius-card);
+}
+
+
+/* ---------------------------------------------------------
+   Pillar heading
+   --------------------------------------------------------- */
+
+.home-pillar-title {
+    margin: 0;
+
+    max-width: none;
+
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.35;
+
+    color: var(--color-navy);
+}
+
+
+/* =========================================================
+   14. HOME — RESPONSIVE BEHAVIOUR
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+    .home-section {
+        padding-top: var(--space-6);
+        padding-bottom: var(--space-6);
+    }
+
+    .home-section .hero-title {
+        max-width: 46rem;
+        margin-bottom: var(--space-4);
+    }
+
+    .home-pillars {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .home-pillar {
+        min-height: 6.5rem;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 40rem) {
+
+    .home-section {
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-5);
+    }
+
+    .home-section .hero-title {
+        max-width: none;
+        margin-bottom: var(--space-4);
+
+        font-size: 2.25rem;
+        line-height: 1.15;
+    }
+
+    .home-pillars {
+        gap: var(--space-2);
+    }
+
+    .home-pillar {
+        min-height: auto;
+
+        padding: var(--spacing-card-padding-mobile);
+    }
+
+    .home-pillar-title {
+        font-size: 1.1875rem;
+        line-height: 1.35;
+    }
+}
+
+/* =========================================================
+   15. OUR VISION — LAYOUT & TYPOGRAPHY
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Vision section spacing
+   --------------------------------------------------------- */
+
+.vision-section {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+
+    background-color: var(--color-background-vision);
+}
+
+
+/* ---------------------------------------------------------
+   Vision content width
+   --------------------------------------------------------- */
+
+.vision-content {
+    max-width: var(--width-reading);
+}
+
+
+/* ---------------------------------------------------------
+   Vision heading
+   --------------------------------------------------------- */
+
+.vision-section .section-title {
+    max-width: 44rem;
+
+    margin-bottom: var(--space-5);
+
+    font-size: var(--font-size-section-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.15;
+
+    color: var(--color-navy);
+}
+
+
+/* ---------------------------------------------------------
+   Vision body typography
+   --------------------------------------------------------- */
+
+.vision-body {
+    max-width: 40rem;
+}
+
+/* =========================================================
+   16. OUR VISION — SUPPORTING NARRATIVE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Vision narrative
+   --------------------------------------------------------- */
+
+.vision-narrative {
+    max-width: 40rem;
+}
+
+
+/* ---------------------------------------------------------
+   Narrative paragraphs
+   --------------------------------------------------------- */
+
+.vision-narrative p {
+    margin: 0;
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+}
+
+.vision-narrative p + p {
+    margin-top: var(--space-2);
+}
+
+
+/* ---------------------------------------------------------
+   Transition into closing statement
+   --------------------------------------------------------- */
+
+.vision-closing-intro {
+    margin-top: var(--space-3) !important;
+}
+
+
+/* =========================================================
+   17. OUR VISION — CLOSING EMPHASIS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Unified closing statement
+   --------------------------------------------------------- */
+
+.vision-closing {
+    position: relative;
+
+    margin-top: var(--space-5);
+
+    padding-left: var(--space-3);
+
+    border-left:
+        var(--border-width-accent)
+        solid
+        var(--color-teal);
+}
+
+
+/* ---------------------------------------------------------
+   Closing statement typography
+   --------------------------------------------------------- */
+
+.vision-closing p {
+    margin: 0;
+
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.45;
+
+    color: var(--color-navy);
+}
+
+.vision-closing p + p {
+    margin-top: var(--space-1);
+}
+
+/* =========================================================
+   18. OUR VISION — RESPONSIVE BEHAVIOUR
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+    .vision-section {
+        padding-top: var(--space-6);
+        padding-bottom: var(--space-6);
+    }
+
+    .vision-content,
+    .vision-body,
+    .vision-narrative {
+        max-width: 100%;
+    }
+
+    .vision-section .section-title {
+        max-width: 42rem;
+        margin-bottom: var(--space-4);
+    }
+
+    .vision-closing {
+        margin-top: var(--space-4);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 40rem) {
+
+    .vision-section {
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-5);
+    }
+
+    .vision-section .section-title {
+        max-width: none;
+
+        margin-bottom: var(--space-4);
+
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    .vision-narrative p {
+        line-height: 1.6;
+    }
+
+   .vision-closing {
+        margin-top: var(--space-4);
+
+        padding-left: var(--space-2);
+    }
+
+    .vision-closing p {
+        font-size: 1.1875rem;
+        line-height: 1.4;
+    }
+
+}
+
+/* =========================================================
+   19. CONSULTING — SECTION INTRODUCTION & LAYOUT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Section spacing
+   --------------------------------------------------------- */
+
+.consulting-section {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+
+    background-color: var(--color-background);
+}
+
+
+/* ---------------------------------------------------------
+   Main consulting content
+   --------------------------------------------------------- */
+
+.consulting-content {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   Consulting header
+   --------------------------------------------------------- */
+
+.consulting-header {
+    max-width: var(--width-reading);
+
+    margin-bottom: var(--space-5);
+}
+
+
+/* ---------------------------------------------------------
+   Section heading
+   --------------------------------------------------------- */
+
+.consulting-section .section-title {
+    max-width: 46rem;
+
+    margin-bottom: var(--space-4);
+
+    font-size: var(--font-size-section-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.15;
+
+    color: var(--color-navy);
+}
+
+
+/* ---------------------------------------------------------
+   Consulting introduction
+   --------------------------------------------------------- */
+
+.consulting-intro {
+    max-width: 42rem;
+}
+
+.consulting-intro p {
+    margin: 0;
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+}
+
+.consulting-intro p + p {
+    margin-top: var(--space-2);
+}
+
+
+/* ---------------------------------------------------------
+   Transition into service portfolio
+   --------------------------------------------------------- */
+
+.consulting-services-intro {
+    margin-top: var(--space-3) !important;
+
+    font-weight: var(--font-weight-semibold) !important;
+
+    color: var(--color-navy) !important;
+}
+
+/* =========================================================
+   20. CONSULTING — SERVICE CARDS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Service-card grid
+   --------------------------------------------------------- */
+
+.consulting-services {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: var(--spacing-card-gap);
+
+    width: 100%;
+
+    margin-bottom: var(--space-8);
+}
+
+
+/* ---------------------------------------------------------
+   Individual service card
+   --------------------------------------------------------- */
+
+.consulting-service {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 16rem;
+
+    padding: var(--spacing-card-padding);
+
+    background-color: var(--color-background);
+
+    border:
+        var(--border-width-standard)
+        solid
+        var(--color-border-light);
+
+    border-top:
+        var(--border-width-accent)
+        solid
+        var(--color-bridge-light);
+
+    border-radius: var(--radius-card);
+}
+
+/* ---------------------------------------------------------
+   Service-card heading
+   --------------------------------------------------------- */
+
+.consulting-service-title {
+    margin: 0 0 var(--space-2);
+
+    min-height: 3.4rem;
+
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.35;
+
+    color: var(--color-navy);
+}
+
+/* ---------------------------------------------------------
+   Service-card body
+   --------------------------------------------------------- */
+
+.consulting-service p {
+    margin: 0;
+
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-card);
+
+    color: var(--color-text);
+}
+
+/* =========================================================
+   21. CONSULTING — LIFECYCLE VISUAL TREATMENT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Lifecycle section
+   --------------------------------------------------------- */
+
+.consulting-lifecycle {
+    max-width: 52rem;
+
+    padding-top: var(--space-1);
+}
+
+
+/* ---------------------------------------------------------
+   Lifecycle introduction
+   --------------------------------------------------------- */
+
+.consulting-lifecycle-header {
+    max-width: var(--width-reading);
+
+    margin-bottom: var(--space-5);
+}
+
+.consulting-lifecycle-title {
+    margin: 0 0 var(--space-3);
+
+    font-size: var(--font-size-subsection-major);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
+
+    color: var(--color-navy);
+}
+
+.consulting-lifecycle-intro {
+    max-width: 44rem;
+}
+
+.consulting-lifecycle-intro p {
+    margin: 0;
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+}
+
+.consulting-lifecycle-intro p + p {
+    margin-top: var(--space-2);
+}
+
+
+/* ---------------------------------------------------------
+   Lifecycle sequence
+   --------------------------------------------------------- */
+
+.consulting-lifecycle-steps {
+    counter-reset: lifecycle-step;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ---------------------------------------------------------
+   Individual lifecycle stage
+   --------------------------------------------------------- */
+
+.consulting-lifecycle-step {
+    counter-increment: lifecycle-step;
+
+    position: relative;
+
+    margin: 0;
+
+    padding:
+        0
+        0
+        var(--space-4)
+        4.5rem;
+
+    min-height: 5rem;
+}
+
+
+/* Continuous lifecycle line */
+
+.consulting-lifecycle-step::after {
+    content: "";
+
+    position: absolute;
+
+    top: 2.5rem;
+    bottom: 0;
+
+    left: 1.5rem;
+
+    width: var(--border-width-accent);
+
+    background-color: var(--color-bridge-light);
+}
+
+
+/* Do not extend the line beyond the final stage */
+
+.consulting-lifecycle-step:last-child::after {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   Number marker
+   --------------------------------------------------------- */
+
+.consulting-lifecycle-step::before {
+    content: counter(lifecycle-step);
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3rem;
+    height: 3rem;
+
+    border:
+        var(--border-width-accent)
+        solid
+        var(--color-teal);
+
+    border-radius: 50%;
+
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1;
+
+    color: var(--color-navy);
+    background-color: var(--color-background);
+}
+
+
+/* ---------------------------------------------------------
+   Lifecycle stage title
+   --------------------------------------------------------- */
+
+.consulting-lifecycle-step-title {
+    margin: 0 0 var(--space-1);
+
+    padding-top: 0.2rem;
+
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.35;
+
+    color: var(--color-navy);
+}
+
+
+/* ---------------------------------------------------------
+   Lifecycle stage description
+   --------------------------------------------------------- */
+
+.consulting-lifecycle-step p {
+    max-width: 44rem;
+
+    margin: 0;
+
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+
+    color: var(--color-text);
+}
+
+/* =========================================================
+   22. CONSULTING — RESPONSIVE BEHAVIOUR
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+    .consulting-section {
+        padding-top: var(--space-6);
+        padding-bottom: var(--space-6);
+    }
+
+    .consulting-header {
+        max-width: 100%;
+        margin-bottom: var(--space-4);
+    }
+
+    .consulting-section .section-title {
+        max-width: 44rem;
+        margin-bottom: var(--space-4);
+    }
+
+    .consulting-intro {
+        max-width: 44rem;
+    }
+
+
+    /* Service cards: 2 columns */
+
+    .consulting-services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: var(--space-3);
+
+        margin-bottom: var(--space-7);
+    }
+
+    .consulting-service {
+        min-height: 14rem;
+    }
+
+
+    /* Lifecycle */
+
+    .consulting-lifecycle {
+        max-width: 100%;
+    }
+
+    .consulting-lifecycle-header,
+    .consulting-lifecycle-intro {
+        max-width: 46rem;
+    }
+
+    .consulting-lifecycle-step p {
+        max-width: 46rem;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 40rem) {
+
+    .consulting-section {
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-5);
+    }
+
+
+    /* Section heading */
+
+    .consulting-section .section-title {
+        max-width: none;
+
+        margin-bottom: var(--space-4);
+
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+
+    /* Introduction */
+
+    .consulting-intro {
+        max-width: none;
+    }
+
+    .consulting-intro p {
+        line-height: 1.6;
+    }
+
+
+    /* Service cards: single column */
+
+    .consulting-services {
+        grid-template-columns: 1fr;
+
+        gap: var(--space-2);
+
+        margin-bottom: var(--space-6);
+    }
+
+    .consulting-service {
+        min-height: auto;
+
+        padding: var(--spacing-card-padding-mobile);
+    }
+
+    .consulting-service-title {
+        min-height: 0;
+
+        font-size: 1.1875rem;
+        line-height: 1.35;
+    }
+
+    .consulting-service p {
+        font-size: var(--font-size-small);
+        line-height: 1.55;
+    }
+
+
+    /* Lifecycle heading */
+
+    .consulting-lifecycle-title {
+        font-size: 1.75rem;
+    }
+
+    .consulting-lifecycle-header {
+        margin-bottom: var(--space-4);
+    }
+
+
+    /* Lifecycle rail */
+
+    .consulting-lifecycle-step {
+        padding:
+            0
+            0
+            var(--space-4)
+            3.75rem;
+
+        min-height: 4.5rem;
+    }
+
+    .consulting-lifecycle-step::before {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        font-size: var(--font-size-small);
+    }
+
+    .consulting-lifecycle-step::after {
+        top: 2.5rem;
+        left: 1.25rem;
+    }
+
+
+    /* Lifecycle content */
+
+    .consulting-lifecycle-step-title {
+        font-size: 1.1875rem;
+        line-height: 1.35;
+    }
+
+    .consulting-lifecycle-step p {
+        max-width: none;
+
+        font-size: var(--font-size-small);
+        line-height: 1.55;
+    }
+}
+
+/* =========================================================
+   23. TRAINING — SECTION HEADING, INTRODUCTION & LAYOUT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Overall section
+   --------------------------------------------------------- */
+
+.training-section {
+    background-color: var(--color-background-vision);
+}
+
+.training-content {
+    width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   Main heading and introduction
+   --------------------------------------------------------- */
+
+.training-header {
+    max-width: var(--width-hero);
+    margin-bottom: var(--spacing-subsection-gap);
+}
+
+.training-header .section-title {
+    max-width: var(--width-hero);
+    margin-bottom: var(--spacing-heading-to-intro);
+}
+
+.training-intro {
+    max-width: var(--width-reading);
+}
+
+.training-intro p {
+    margin: 0;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+}
+
+.training-intro p + p {
+    margin-top: var(--spacing-paragraph);
+}
+
+
+/* ---------------------------------------------------------
+   Major Training subsections
+   --------------------------------------------------------- */
+
+.training-learning,
+.training-case-studies,
+.training-programs,
+.training-objective {
+    margin-top: var(--spacing-subsection-gap);
+}
+
+
+/* ---------------------------------------------------------
+   Major subsection headings
+   --------------------------------------------------------- */
+
+.training-subsection-header {
+    max-width: var(--width-reading);
+    margin-bottom: var(--space-4);
+}
+
+.training-subsection-title {
+    max-width: var(--width-reading);
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-subsection-major);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-navy);
+}
+
+.training-subsection-header p {
+    max-width: var(--width-reading);
+    margin: 0;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+}
+
+
+/* ---------------------------------------------------------
+   Case-study narrative
+   --------------------------------------------------------- */
+
+.training-case-studies-content {
+    max-width: var(--width-reading);
+}
+
+/* ---------------------------------------------------------
+   Training Objective — narrative only
+   Flow styling comes later
+   --------------------------------------------------------- */
+
+.training-objective-header {
+    max-width: var(--width-reading);
+    margin-bottom: var(--space-4);
+}
+
+.training-objective-header p {
+    margin: 0;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+}
+
+.training-objective-header p + p {
+    margin-top: var(--spacing-paragraph);
+}
+
+/* =========================================================
+   24. TRAINING — LEARNING-DIMENSION CARDS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Learning-dimension grid
+   --------------------------------------------------------- */
+
+.training-learning-dimensions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--spacing-card-gap);
+}
+
+
+/* ---------------------------------------------------------
+   Individual learning-dimension card
+   --------------------------------------------------------- */
+
+.training-learning-dimension {
+    position: relative;
+
+    padding: var(--spacing-card-padding);
+
+    background-color: var(--color-background);
+
+    border:
+        var(--border-width-standard)
+        solid
+        var(--color-border-light);
+
+    border-radius: var(--radius-card);
+}
+
+
+/* ---------------------------------------------------------
+   Teal accent marker
+   --------------------------------------------------------- */
+
+.training-learning-dimension::before {
+    content: "";
+
+    display: block;
+
+    width: 2.5rem;
+    height: var(--border-width-accent);
+
+    margin-bottom: var(--space-3);
+
+    background-color: var(--color-teal);
+}
+
+
+/* ---------------------------------------------------------
+   Card heading
+   --------------------------------------------------------- */
+
+.training-learning-dimension-title {
+    margin: 0 0 var(--space-2);
+
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.35;
+
+    color: var(--color-navy);
+}
+
+
+/* ---------------------------------------------------------
+   Card body
+   --------------------------------------------------------- */
+
+.training-learning-dimension p {
+    margin: 0;
+
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-card);
+
+    color: var(--color-text);
+}
+
+/* =========================================================
+   25. TRAINING — INDUSTRY EXAMPLES & CASE STUDIES
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Subsection layout
+   --------------------------------------------------------- */
+
+.training-case-studies {
+    max-width: var(--width-reading);
+}
+
+
+/* ---------------------------------------------------------
+   Narrative treatment
+   --------------------------------------------------------- */
+
+.training-case-studies-content {
+    position: relative;
+
+    padding-left: var(--space-4);
+
+    border-left:
+        var(--border-width-accent)
+        solid
+        var(--color-teal);
+}
+
+
+/* ---------------------------------------------------------
+   Narrative paragraphs
+   --------------------------------------------------------- */
+
+.training-case-studies-content p {
+    margin: 0;
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+}
+
+.training-case-studies-content p + p {
+    margin-top: var(--space-2);
+}
+
+/* =========================================================
+   26. TRAINING — PROGRAM CARDS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Program grid
+   --------------------------------------------------------- */
+
+.training-program-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-card-gap);
+}
+
+
+/* ---------------------------------------------------------
+   Individual program card
+   --------------------------------------------------------- */
+
+.training-program {
+    position: relative;
+
+    padding: var(--space-4);
+
+    background-color: var(--color-background);
+
+    border:
+        var(--border-width-standard)
+        solid
+        var(--color-border-light);
+
+    border-radius: var(--radius-card);
+}
+
+
+/* ---------------------------------------------------------
+   Accent treatment
+   --------------------------------------------------------- */
+
+.training-program::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--border-width-accent);
+
+    background-color: var(--color-teal);
+
+    border-radius:
+        var(--radius-card)
+        var(--radius-card)
+        0
+        0;
+}
+
+
+/* ---------------------------------------------------------
+   Program heading
+   --------------------------------------------------------- */
+
+.training-program-title {
+    margin: 0 0 var(--space-2);
+
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.35;
+
+    color: var(--color-navy);
+}
+
+
+/* ---------------------------------------------------------
+   Program description
+   --------------------------------------------------------- */
+
+.training-program p {
+    margin: 0;
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-card);
+
+    color: var(--color-text);
+}
+
+/* =========================================================
+   27. TRAINING — OBJECTIVE FLOW
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Objective section
+   --------------------------------------------------------- */
+
+.training-objective {
+    max-width: var(--width-hero);
+}
+
+
+/* ---------------------------------------------------------
+   Flow grid
+   --------------------------------------------------------- */
+
+.training-objective-flow {
+    counter-reset: training-stage;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    column-gap: var(--space-3);
+    row-gap: var(--space-4);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ---------------------------------------------------------
+   Individual stage
+   --------------------------------------------------------- */
+
+.training-objective-flow li {
+    counter-increment: training-stage;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+
+    margin: 0;
+    padding-top: 3.75rem;
+
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.4;
+
+    color: var(--color-navy);
+}
+
+
+/* ---------------------------------------------------------
+   Number marker
+   --------------------------------------------------------- */
+
+.training-objective-flow li::before {
+    content: counter(training-stage);
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3rem;
+    height: 3rem;
+
+    border:
+        var(--border-width-accent)
+        solid
+        var(--color-teal);
+
+    border-radius: 50%;
+
+    background-color: var(--color-background);
+
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1;
+
+    color: var(--color-navy);
+
+    z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   Connector line
+   --------------------------------------------------------- */
+
+.training-objective-flow li::after {
+    content: "";
+
+    position: absolute;
+
+    top: 1.5rem;
+    left: 3rem;
+
+    width: calc(100% - 3rem + var(--space-3));
+    height: var(--border-width-accent);
+
+    background-color: var(--color-bridge-light);
+
+    z-index: 1;
+}
+
+
+/* End connector at stage 4 and stage 8 */
+
+.training-objective-flow li:nth-child(4)::after,
+.training-objective-flow li:nth-child(8)::after {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   Closing statement
+   --------------------------------------------------------- */
+
+.training-objective-conclusion {
+    max-width: var(--width-reading);
+
+    margin: var(--space-4) 0 0;
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+}
+
+/* =========================================================
+   28. TRAINING — RESPONSIVE BEHAVIOUR
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+    /* Overall widths */
+
+    .training-header,
+    .training-header .section-title,
+    .training-intro,
+    .training-subsection-header,
+    .training-subsection-title,
+    .training-case-studies,
+    .training-case-studies-content,
+    .training-objective,
+    .training-objective-header,
+    .training-objective-conclusion {
+        max-width: 100%;
+    }
+
+
+    /* Learning dimensions: 3 columns -> 2 columns */
+
+    .training-learning-dimensions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* Training Objective:
+       keep 4 + 4 structure, but tighten spacing */
+
+    .training-objective-flow {
+        column-gap: var(--space-2);
+     }
+
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 40rem) {
+
+    /* -----------------------------------------------------
+       Training introduction
+       ----------------------------------------------------- */
+
+    .training-header {
+        margin-bottom: var(--space-5);
+    }
+
+    .training-header .section-title {
+        margin-bottom: var(--space-4);
+    }
+
+    .training-intro p {
+        line-height: 1.6;
+    }
+
+
+    /* -----------------------------------------------------
+       Major subsection spacing
+       ----------------------------------------------------- */
+
+    .training-learning,
+    .training-case-studies,
+    .training-programs,
+    .training-objective {
+        margin-top: var(--space-5);
+    }
+
+    .training-subsection-header {
+        margin-bottom: var(--space-3);
+    }
+
+    .training-subsection-title {
+        margin-bottom: var(--space-2);
+
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+
+    /* -----------------------------------------------------
+       Learning dimensions: single column
+       ----------------------------------------------------- */
+
+    .training-learning-dimensions {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+
+    .training-learning-dimension {
+        padding: var(--spacing-card-padding-mobile);
+    }
+
+    .training-learning-dimension-title {
+        font-size: 1.1875rem;
+    }
+
+    .training-learning-dimension p {
+        line-height: 1.55;
+    }
+
+
+    /* -----------------------------------------------------
+       Industry examples narrative
+       ----------------------------------------------------- */
+
+    .training-case-studies-content {
+        padding-left: var(--space-3);
+    }
+
+
+    /* -----------------------------------------------------
+       Program cards: single column
+       ----------------------------------------------------- */
+
+    .training-program-list {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+
+    .training-program {
+        padding: var(--spacing-card-padding-mobile);
+    }
+
+    .training-program-title {
+        font-size: 1.1875rem;
+    }
+
+    .training-program p {
+        font-size: var(--font-size-small);
+        line-height: 1.55;
+    }
+
+
+    /* -----------------------------------------------------
+       Training Objective:
+       horizontal flow -> vertical journey
+       ----------------------------------------------------- */
+
+    .training-objective-flow {
+        display: block;
+
+    }
+
+    .training-objective-flow li {
+        position: relative;
+
+        min-height: 4.5rem;
+
+        padding:
+            0
+            0
+            var(--space-4)
+            3.75rem;
+
+        font-size: var(--font-size-small);
+        line-height: 1.4;
+    }
+
+
+    /* Number circles */
+
+    .training-objective-flow li::before {
+        top: 0;
+        left: 0;
+
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+
+    /* Replace horizontal connectors with vertical rail */
+
+    .training-objective-flow li::after {
+        display: block;
+
+        top: 2.5rem;
+        bottom: 0;
+        left: 1.25rem;
+
+        width: var(--border-width-accent);
+        height: auto;
+
+        background-color: var(--color-bridge-light);
+    }
+
+
+    /* Restore connectors previously removed
+       from desktop stages 4 and 8 */
+
+    .training-objective-flow li:nth-child(4)::after {
+        display: block;
+    }
+
+
+    /* Final stage must terminate the rail */
+
+    .training-objective-flow li:last-child::after {
+        display: none;
+    }
+
+
+    /* Closing statement */
+
+    .training-objective-conclusion {
+        margin-top: var(--space-2);
+
+        font-size: var(--font-size-small);
+        line-height: 1.6;
+    }
+}
+
+/* =========================================================
+   29. CONTACT — HEADING, INTRODUCTION & SECTION LAYOUT
+   ========================================================= */
+
+.contact-section {
+    background-color: var(--color-background);
+}
+
+.contact-content {
+    width: 100%;
+}
+
+.contact-header {
+    max-width: var(--width-hero);
+    margin-bottom: var(--space-4);
+}
+
+.contact-header .section-title {
+    max-width: var(--width-hero);
+    margin-bottom: var(--spacing-heading-to-intro);
+}
+
+.contact-intro {
+    max-width: var(--width-reading);
+}
+
+.contact-intro p {
+    margin: 0;
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+}
+
+.contact-intro p + p {
+    margin-top: var(--spacing-paragraph);
+}
+
+
+/* ---------------------------------------------------------
+   Enquiry categories
+   --------------------------------------------------------- */
+
+.contact-enquiry-list {
+    max-width: var(--width-reading);
+
+    margin: 0;
+    padding-left: var(--space-3);
+}
+
+.contact-enquiry-list li {
+    padding-left: var(--space-1);
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+}
+
+.contact-enquiry-list li + li {
+    margin-top: 0.25rem;
+}
+
+
+/* ---------------------------------------------------------
+   Reset browser default <address> presentation
+   --------------------------------------------------------- */
+
+.contact-address {
+    margin: 0;
+
+    font-style: normal;
+}
+
+.contact-address p {
+    margin: 0;
+
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+
+    color: var(--color-text);
+}
+
+.contact-address p + p {
+    margin-top: var(--space-1);
+}
+
+/* =========================================================
+   30. CONTACT — INFORMATION BLOCK
+   ========================================================= */
+
+.contact-details {
+    max-width: var(--width-reading);
+
+    margin-top: var(--space-5);
+    padding: var(--space-4);
+
+    background-color: var(--color-background);
+
+    border:
+        var(--border-width-standard)
+        solid
+        var(--color-border-light);
+
+    border-top:
+        var(--border-width-accent)
+        solid
+        var(--color-teal);
+
+    border-radius: var(--radius-card);
+}
+
+
+/* ---------------------------------------------------------
+   Contact heading
+   --------------------------------------------------------- */
+
+.contact-details-title {
+    margin: 0 0 var(--space-3);
+
+    font-size: var(--font-size-subsection-major);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+
+    color: var(--color-navy);
+}
+
+
+/* ---------------------------------------------------------
+   Contact identity
+   --------------------------------------------------------- */
+
+.contact-name {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-navy);
+}
+
+.contact-organization {
+    color: var(--color-text-secondary);
+}
+
+
+/* ---------------------------------------------------------
+   Email
+   --------------------------------------------------------- */
+
+.contact-email {
+    margin-top: var(--space-3) !important;
+}
+
+.contact-email span {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text);
+}
+
+.contact-email a {
+    color: var(--color-navy);
+
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-teal);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+}
+
+.contact-email a:hover {
+    color: var(--color-navy);
+
+    text-decoration-thickness: 3px;
+}
+
+/* =========================================================
+   31. CONTACT — RESPONSIVE BEHAVIOUR
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+    .contact-header,
+    .contact-header .section-title,
+    .contact-intro,
+    .contact-enquiry-list,
+    .contact-details {
+        max-width: 100%;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 40rem) {
+
+    /* Contact introduction */
+
+    .contact-header {
+        margin-bottom: var(--space-3);
+    }
+
+    .contact-header .section-title {
+        margin-bottom: var(--space-4);
+    }
+
+    .contact-intro p {
+        line-height: 1.6;
+    }
+
+
+    /* Enquiry list */
+
+    .contact-enquiry-list li {
+        padding-left: 0;
+
+        font-size: var(--font-size-small);
+        line-height: 1.55;
+    }
+
+    .contact-enquiry-list li + li {
+        margin-top: var(--space-1);
+    }
+
+
+    /* Contact information block */
+
+    .contact-details {
+        margin-top: var(--space-4);
+        padding: var(--spacing-card-padding-mobile);
+    }
+
+    .contact-details-title {
+         font-size: 1.75rem;
+    }
+
+    .contact-address p {
+        font-size: var(--font-size-small);
+        line-height: 1.6;
+    }
+
+
+    /* Email wrapping */
+
+    .contact-email a {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+}
+
+/* =========================================================
+   32. FOOTER — BACKGROUND, LAYOUT & BRAND TREATMENT
+   ========================================================= */
+
+.site-footer {
+    background-color: var(--color-navy);
+    color: #ffffff;
+}
+
+.site-footer .container {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-4);
+}
+
+
+/* ---------------------------------------------------------
+   Main footer layout
+   --------------------------------------------------------- */
+
+.footer-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: var(--space-6);
+}
+
+
+/* ---------------------------------------------------------
+   Footer brand
+   --------------------------------------------------------- */
+
+.footer-brand {
+    max-width: 26rem;
+}
+
+.footer-brand-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   Footer symbol
+   --------------------------------------------------------- */
+
+.footer-brand-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3.25rem;
+    height: 3.25rem;
+
+    padding: 0.375rem;
+
+    flex-shrink: 0;
+
+    background-color: var(--color-background);
+
+    border-radius: var(--radius-small);
+}
+
+.footer-brand-symbol img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* ---------------------------------------------------------
+   Footer brand name
+   --------------------------------------------------------- */
+
+.footer-brand-name {
+    display: inline-flex;
+    align-items: baseline;
+
+    gap: 0.35rem;
+
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.footer-brand-insightbridge {
+    font-weight: var(--font-weight-semibold);
+    color: #ffffff;
+}
+
+.footer-brand-analytics {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-bridge-light);
+}
+
+
+/* ---------------------------------------------------------
+   Footer tagline
+   --------------------------------------------------------- */
+
+.footer-tagline {
+    margin: var(--space-2) 0 0;
+
+    font-size: var(--font-size-small);
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* ---------------------------------------------------------
+   Right-side footer area
+   --------------------------------------------------------- */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: var(--space-3);
+}
+
+/* =========================================================
+   33. FOOTER — NAVIGATION & CONTACT TREATMENT
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Footer navigation
+   --------------------------------------------------------- */
+
+.footer-navigation ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    gap: var(--space-3);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.footer-navigation li {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-navigation a {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.4;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    text-decoration: none;
+}
+
+.footer-navigation a:hover {
+    color: #ffffff;
+
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-bridge-light);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+}
+
+
+/* ---------------------------------------------------------
+   Footer contact
+   --------------------------------------------------------- */
+
+.footer-contact {
+    text-align: right;
+}
+
+.footer-contact a {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+
+    color: #ffffff;
+
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-bridge-light);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+}
+
+.footer-contact a:hover {
+    text-decoration-thickness: 2px;
+}
+
+/* =========================================================
+   34. FOOTER — LOWER BAR & COPYRIGHT
+   ========================================================= */
+
+.footer-bottom {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+
+    border-top:
+        var(--border-width-standard)
+        solid
+        rgba(255, 255, 255, 0.16);
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    font-size: var(--font-size-footer);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+/* =========================================================
+   35. FOOTER — RESPONSIVE BEHAVIOUR
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+
+    .footer-main {
+        flex-direction: column;
+
+        gap: var(--space-4);
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-links {
+        width: 100%;
+
+        align-items: flex-start;
+
+        gap: var(--space-3);
+    }
+
+    .footer-navigation ul {
+        justify-content: flex-start;
+    }
+
+    .footer-contact {
+        text-align: left;
+    }
+
+    .footer-contact a {
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 40rem) {
+
+    /* Overall footer spacing */
+
+    .site-footer .container {
+        padding-top: var(--space-4);
+        padding-bottom: var(--space-3);
+    }
+
+
+    /* Brand */
+
+
+    .footer-brand-symbol {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+
+    .footer-brand-name {
+        flex-wrap: wrap;
+
+        font-size: 1.125rem;
+    }
+
+    .footer-tagline {
+          font-size: var(--font-size-footer);
+    }
+
+
+     /* Navigation becomes vertical */
+
+    .footer-navigation ul {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: var(--space-2);
+    }
+
+    .footer-navigation a {
+        font-size: var(--font-size-footer);
+    }
+
+
+    /* Contact */
+
+    .footer-contact {
+        width: 100%;
+    }
+
+    .footer-contact a {
+        display: inline;
+
+        font-size: var(--font-size-footer);
+
+    }
+
+
+}
+
+/* =========================================================
+   FOOTER — KEYBOARD FOCUS VISIBILITY
+   ========================================================= */
+
+.site-footer a:focus-visible {
+    outline: 3px solid var(--color-bridge-light);
+    outline-offset: 4px;
+
+    border-radius: var(--radius-small);
+}
+
+/* =========================================================
+   WHOLE PAGE — SECTION SEPARATORS
+   ========================================================= */
+
+main > section + section {
+    border-top:
+        var(--border-width-accent)
+        solid
+        var(--color-border-light);
+}
