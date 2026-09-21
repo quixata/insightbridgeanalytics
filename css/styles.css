@@ -3259,3 +3259,148 @@ main > section + section {
         solid
         var(--color-border-light);
 }
+
+/* =========================================================
+   OUR TEAM — LAYOUT, CARDS & PROFILE
+   ========================================================= */
+
+.team-section {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+    background-color: var(--color-background-near-white);
+}
+
+.team-content {
+    max-width: var(--width-reading);
+}
+
+.team-section .section-title {
+    margin-bottom: var(--space-4);
+    color: var(--color-navy);
+}
+
+.team-intro {
+    max-width: 44rem;
+}
+
+.team-intro p {
+    margin: 0;
+}
+
+.team-members {
+    margin-top: var(--space-5);
+}
+
+.team-subsection-title {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-subsection);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-navy);
+}
+
+.team-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 17rem));
+    gap: var(--spacing-card-gap);
+}
+
+.team-card {
+    overflow: hidden;
+    background-color: var(--color-background);
+    border: var(--border-width-standard) solid var(--color-border);
+    border-top: var(--border-width-accent) solid var(--color-teal);
+    border-radius: var(--radius-card);
+}
+
+.team-card-photo {
+    padding: var(--space-3) var(--space-3) 0;
+}
+
+.team-card-photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--radius-small);
+}
+
+.team-card-body {
+    padding: var(--space-3);
+}
+
+.team-card-name {
+    margin: 0;
+    font-size: var(--font-size-card-heading);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-heading);
+    color: var(--color-navy);
+}
+
+.team-card-role {
+    margin: var(--space-1) 0 0;
+    font-size: var(--font-size-small);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.team-profiles {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: var(--border-width-standard) solid var(--color-border-light);
+}
+
+.team-profile {
+    max-width: 44rem;
+}
+
+.team-profile p {
+    margin: 0;
+}
+
+.team-profile p + p {
+    margin-top: var(--space-2);
+}
+
+@media (max-width: 60rem) {
+    .team-section {
+        padding-top: var(--space-6);
+        padding-bottom: var(--space-6);
+    }
+
+    .team-content,
+    .team-intro,
+    .team-profile {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 40rem) {
+    .team-section {
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-5);
+    }
+
+    .team-section .section-title {
+        margin-bottom: var(--space-3);
+    }
+
+    .team-members {
+        margin-top: var(--space-4);
+    }
+
+    .team-subsection-title {
+        margin-bottom: var(--space-3);
+        font-size: 1.375rem;
+    }
+
+    .team-card-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 18rem;
+    }
+
+    .team-profiles {
+        margin-top: var(--space-4);
+        padding-top: var(--space-3);
+    }
+}
